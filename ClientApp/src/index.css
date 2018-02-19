@@ -88,3 +88,22 @@ input[type=range]::-ms-track {
     border-color: transparent;
     color: transparent;
 }
+
+.main{
+    position: relative;
+    top: 50vh;
+    transform: translateY(-50%);
+}
+
+.sound-controller{
+    margin-bottom: 8vh;
+}
+
+.sound-icon{
+    font-size: 10rem;
+    color: rgba(255,255,255,.7);
+}
+
+.sound-icon-row{
+    margin-bottom: 25px;
+}

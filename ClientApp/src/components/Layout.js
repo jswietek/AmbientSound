@@ -6,9 +6,9 @@ export class Layout extends Component {
 
   render() {
     return (
-      <Grid fluid>
+      <Grid fluid bsClass="main">
         <Row>
-          <Col sm={9}>
+          <Col sm={12}>
             {this.props.children}
           </Col>
         </Row>
