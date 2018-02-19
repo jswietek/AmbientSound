@@ -6,42 +6,85 @@ body{
     background-size: cover;
 }
 
-.menu-btn{
-    border-radius: 0;
-    color: white;
-    margin: 1vw;
-
-    font-size: 2em;
+input[type=range]{
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+    margin: 8px;
 }
 
-.navbar.navbar-default{
-    display: block;
-    background: none;
-    border: none;
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 26px;
+    width: 10px;
+    border-radius: 3px;
+    background: white;
+    cursor: pointer;
+    margin-top: -8px;
 }
 
-.navbar::before{
-    display: block;
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    width: 100vw;
-    height: 100%;
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: rgba(255,255,255,.7);
+    border-radius: 1.3px;
+  }
 
-    background-color: rgba(0,0,0,.25);
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+input[type=range]::-moz-range-thumb {
+    height: 26px;
+    width: 16px;
+    border-radius: 3px;
+    background: white;
+    cursor: pointer;
+    margin-top: -14px;
 }
 
-.menu-btn > a{
-    color:white !important;
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: rgba(255,255,255,.7);
+    border-radius: 1.3px;
 }
 
-.menu-btn > a:hover, .menu-btn > a:focus {
-    color: rgb(170,170,170) !important;
+input[type=range]::-ms-thumb {
+    height: 26px;
+    width: 16px;
+    border-radius: 3px;
+    background: white;
+    cursor: pointer;
+    margin-top: -14px;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+
+  input[type=range]::-ms-fill-lower {
+    background: rgba(255,255,255,.7);
+  }
+
+  input[type=range]::-ms-fill-upper {
+    background: rgba(255,255,255,.7);
+  }
+  
+input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+  
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+  
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
 }

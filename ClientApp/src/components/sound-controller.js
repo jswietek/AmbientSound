@@ -30,6 +30,6 @@ export class SoundController extends Component {
 	}
 
 	handleInput(event){
-		this.setVolume(event.target.value * 5 / 100);
+		this.setVolume(event.target.value * 5 / 100); //change to percent
 	}
 }
