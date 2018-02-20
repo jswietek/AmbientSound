@@ -4,41 +4,41 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AmbientSound.Controllers
-{
-    [Route("api/[controller]")]
-    public class SampleDataController : Controller
-    {
-        private static string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+namespace AmbientSound.Controllers {
+    [Route ("api")]
+    public class SoundsController : Controller {
+        List<Sound> _sounds;
+        public SoundsController () {
+            _sounds = new List<Sound> () {
+                new Sound {
+                    Id = 1,
+                    FileName = "CoffeeShop.wav",
+                    IconName = "user"
+                },
 
-        [HttpGet("[action]")]
-        public IEnumerable<WeatherForecast> WeatherForecasts()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            });
+                new Sound {
+                    Id = 2,
+                    FileName = "Rain.wav",
+                    IconName = "cloud"
+                },
+
+                new Sound {
+                    Id = 3,
+                    FileName = "ThunderStorm.wav",
+                    IconName = "flash"
+                },
+
+                new Sound {
+                    Id = 4,
+                    FileName = "WhiteNoise.wav",
+                    IconName = "bullhorn"
+                },
+            };
         }
 
-        public class WeatherForecast
-        {
-            public string DateFormatted { get; set; }
-            public int TemperatureC { get; set; }
-            public string Summary { get; set; }
-
-            public int TemperatureF
-            {
-                get
-                {
-                    return 32 + (int)(TemperatureC / 0.5556);
-                }
-            }
+        [HttpGet ("books")]
+        public JsonResult Sounds () {
+            return Json(_sounds);
         }
     }
 }
