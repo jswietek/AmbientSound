@@ -7,6 +7,8 @@ export class Layout extends Component {
 	render() {
 		return (
 			<Grid fluid>
+				<div id="menu-root" />
+				
 				<Row>
 					<Col sm={12}>
 						{this.props.children}

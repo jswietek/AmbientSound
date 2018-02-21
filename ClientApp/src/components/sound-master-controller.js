@@ -1,12 +1,7 @@
 import { Col, Grid, Row } from 'react-bootstrap';
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { SoundControllersContainer } from './sound-controllers-container';
+import { PortalContainer } from './portal-container';
 import { SoundController } from './sound-controller';
-import CoffeeShopSound from '../sound/CoffeeShop.wav';
-import RainSound from '../sound/Rain.wav';
-import ThunderStormSound from '../sound/ThunderStorm.wav';
-import WhiteNoiseSound from '../sound/WhiteNoise.wav';
 
 export class SoundMasterController extends Component {
 	displayName = SoundMasterController.name;
@@ -46,7 +41,7 @@ export class SoundMasterController extends Component {
 
 	getLoadingScreen() {
 		return (
-			<SoundControllersContainer>
+			<PortalContainer root="sound-root">
 				<Grid fluid>
 					<Row>
 						<Col sm={12} className="text-center">
@@ -54,7 +49,7 @@ export class SoundMasterController extends Component {
 						</Col>
 					</Row>
 				</Grid>
-			</SoundControllersContainer>
+			</PortalContainer>
 		)
 	}
 
@@ -64,7 +59,7 @@ export class SoundMasterController extends Component {
 		return (
 			<div>
 				Here goes the master!
-				<SoundControllersContainer>
+				<PortalContainer root="sound-root">
 					<Grid fluid>
 						<Row>
 							{sounds.map( (item, index) => (
@@ -74,7 +69,7 @@ export class SoundMasterController extends Component {
 							))}
 						</Row>
 					</Grid>
-				</SoundControllersContainer>
+				</PortalContainer>
 			</div>
 		);
 	}

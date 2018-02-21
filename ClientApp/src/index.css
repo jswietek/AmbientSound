@@ -107,3 +107,9 @@ input[type=range]::-ms-track {
 .sound-icon-row{
     margin-bottom: 25px;
 }
+
+#menu-root{
+    position: absolute;
+    top: 0;
+    right: 0;
+}

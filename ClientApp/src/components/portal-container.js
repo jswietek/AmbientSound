@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-export class SoundControllersContainer extends Component {
-	displayName = SoundControllersContainer.name;
+export class PortalContainer extends Component {
+	displayName = PortalContainer.name;
 
 	constructor(props) {
 		super(props);
@@ -10,7 +10,7 @@ export class SoundControllersContainer extends Component {
 	}
 
 	componentDidMount() {
-		var root = document.getElementById('sound-root');
+		var root = document.getElementById(this.props.root);
 		root.appendChild(this.el);
 	}
 

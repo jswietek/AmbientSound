@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { SoundMasterController } from './sound-master-controller';
+import { MasterControl } from './master-control';
 
 export class Home extends Component {
 	displayName = Home.name
@@ -7,13 +8,9 @@ export class Home extends Component {
 	render() {
 		return (
 			<div className="container-fluid main">
+				<MasterControl/>
 				<div className="row" id="sound-master-ctrl-root">
 					<SoundMasterController />
-				</div>
-				<div className="row">
-					<div className="col-xs-12" id="menu-root">
-
-					</div>
 				</div>
 				<div className="row">
 					<div className="col-xs-12" id="sound-root">
