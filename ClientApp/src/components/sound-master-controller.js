@@ -11,11 +11,10 @@ import WhiteNoiseSound from '../sound/WhiteNoise.wav';
 export class SoundMasterController extends Component {
 	displayName = SoundMasterController.name;
 
-
 	constructor(props) {
 		super(props);
 
-		this.apiPath = "/api/books"
+		this.apiPath = "/api/sounds"
 
 		this.state = {
 			error: null,
@@ -25,10 +24,10 @@ export class SoundMasterController extends Component {
 	}
 
 	componentDidMount() {
-		this.fetchSounds();
+		this.fetchSoundsInfo();
 	}
 
-	fetchSounds() {
+	fetchSoundsInfo() {
 		fetch(this.apiPath)
 			.then(res => res.json())
 			.then((result) => {
@@ -69,7 +68,7 @@ export class SoundMasterController extends Component {
 						<Row>
 							{sounds.map( item => (
 								<Col key={item.id} sm={2} smOffset={2}>
-									<SoundController volume="0" src={this.getFilePath(item.fileName)} icon={item.iconName} />
+									<SoundController volume="0" src={this.getFileDataPath(item.id)} icon={item.iconName} />
 								</Col>
 							))}
 						</Row>
@@ -79,8 +78,8 @@ export class SoundMasterController extends Component {
 		);
 	}
 
-	getFilePath(name) {
-		return "../sound/" + name + ".wav";
+	getFileDataPath(id) {
+		return "../api/sounds/data/" + id;
 	}
 
 	render() {

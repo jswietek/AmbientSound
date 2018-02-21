@@ -9,6 +9,7 @@ export class SoundController extends Component {
 	}
 
 	render() {
+		console.log(this.props.src);
 		return (
 			<Grid fluid className="sound-controller">
 				<Row className="text-center sound-icon-row">
