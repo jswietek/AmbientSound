@@ -8,8 +8,7 @@ export class Layout extends Component {
 		return (
 			<Grid fluid>
 				<div id="menu-root" />
-				
-				<Row>
+				<Row className="main">
 					<Col sm={12}>
 						{this.props.children}
 					</Col>

@@ -7,7 +7,7 @@ export class Home extends Component {
 
 	render() {
 		return (
-			<div className="container-fluid main">
+			<div className="container-fluid">
 				<MasterControl/>
 				<div className="row" id="sound-master-ctrl-root">
 					<SoundMasterController />
@@ -21,3 +21,4 @@ export class Home extends Component {
 		);
 	}
 }
+ 
