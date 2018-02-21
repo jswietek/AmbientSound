@@ -60,14 +60,15 @@ export class SoundMasterController extends Component {
 
 	getReadyScreen() {
 		const {error, isLoaded, sounds} = this.state;
+		
 		return (
 			<div>
 				Here goes the master!
 				<SoundControllersContainer>
 					<Grid fluid>
 						<Row>
-							{sounds.map( item => (
-								<Col key={item.id} sm={2} smOffset={2}>
+							{sounds.map( (item, index) => (
+								<Col key={item.id} sm={2} smOffset={index % 2 == 0 ? 3 : 2}>
 									<SoundController volume="0" src={this.getFileDataPath(item.id)} icon={item.iconName} />
 								</Col>
 							))}
