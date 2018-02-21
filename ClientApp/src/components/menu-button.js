@@ -7,12 +7,12 @@ export class MenuButton extends Component {
 		return (
 			<Grid fluid className="menu-btn">
 				<Row>
-					<Col xs={6} xsoffset={3} className="text-center menu-btn-title">
-						TITLE
+					<Col xs={12} className="text-center menu-btn-title">
+						{this.props.name}
 					</Col>
 				</Row>
 				<Row>
-					<Col xs={6} xsoffset={3} className="text-center menu-btn-action">
+					<Col xs={12} className="text-center menu-btn-action">
 						<span className={"glyphicon glyphicon-" + (this.props.isPlaying ? "pause" : "play")}/>
 					</Col>
 				</Row>

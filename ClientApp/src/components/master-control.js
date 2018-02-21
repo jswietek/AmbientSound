@@ -6,7 +6,8 @@ export class MasterControl extends Component {
 	render() {
 		return (
 			<PortalContainer root="menu-root" className="menu-container">
-				<MenuButton />
+				<MenuButton name="Ambience" />
+				<MenuButton name="Timer"/>
 			</PortalContainer>
 		)
 	}
