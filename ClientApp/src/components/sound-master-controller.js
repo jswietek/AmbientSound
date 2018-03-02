@@ -54,23 +54,20 @@ export class SoundMasterController extends Component {
 	}
 
 	getReadyScreen() {
-		const {error, isLoaded, sounds} = this.state;
-		
+		const { error, isLoaded, sounds } = this.state;
+
 		return (
-			<div>
-				Here goes the master!
-				<PortalContainer root="sound-root">
-					<Grid fluid>
-						<Row>
-							{sounds.map( (item, index) => (
-								<Col key={item.id} sm={2} smOffset={index % 2 == 0 ? 3 : 2}>
-									<SoundController volume="0" src={this.getFileDataPath(item.id)} icon={item.iconName} />
-								</Col>
-							))}
-						</Row>
-					</Grid>
-				</PortalContainer>
-			</div>
+			<PortalContainer root="sound-root">
+				<Grid fluid>
+					<Row>
+						{sounds.map((item, index) => (
+							<Col key={item.id} sm={2} smOffset={index % 2 == 0 ? 3 : 2}>
+								<SoundController volume="0" src={this.getFileDataPath(item.id)} icon={item.iconName} />
+							</Col>
+						))}
+					</Row>
+				</Grid>
+			</PortalContainer>
 		);
 	}
 

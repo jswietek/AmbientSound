@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
+import { Col, Grid, Row } from 'react-bootstrap';
 import { SoundMasterController } from './sound-master-controller';
-import { MasterControl } from './master-control';
+import { createStore } from 'redux'
+import rootReducer from '../reducers/index'
+
+let store = createStore(rootReducer);
 
 export class Home extends Component {
 	displayName = Home.name
 
 	render() {
 		return (
-			<div className="container-fluid">
-				<MasterControl/>
-				<div className="row" id="sound-master-ctrl-root">
+			<Grid fluid>
+				<div id="menu-root" />
+				<Row>
 					<SoundMasterController />
-				</div>
-				<div className="row">
-					<div className="col-xs-12" id="sound-root">
-
-					</div>
-				</div>
-			</div>
+				</Row>
+				<Row className="main">
+					<div className="col-xs-12" id="sound-root" />
+				</Row>
+			</Grid>
 		);
 	}
 }
- 
